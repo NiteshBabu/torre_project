@@ -14,7 +14,7 @@ function Container() {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className="container col-sm-12 col-md-6 ">
         <Search setUser={setUser} setErrText={setErrText} />
         {errText && <p>{errText}</p>}
         {user ? <Profile {...user}  /> : null}

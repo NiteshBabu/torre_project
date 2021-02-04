@@ -7,7 +7,7 @@ function Search({ setUser, setErrText }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/${searchText}`)
+      const response = await fetch(`http://localhost:3000/api/${searchText}`)
       const data = await response.json()
       if (response.status === 200) {
         setUser(data)
