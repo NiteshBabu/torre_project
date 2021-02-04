@@ -1,0 +1,25 @@
+.search-wrapper {
+	background-color: #fff;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  margin: auto;
+  border : 2px solid #fff;
+  border-radius: 10px;
+  transition: 500ms ease-in-out;
+  
+    &:focus-within{
+        border : 2px solid wheat;
+    }
+    
+    .search-icon{
+      margin-right: 5px;
+      padding : 1px;
+    }
+  
+    input {
+      border: none;
+      padding : 1px;
+    }
+}
