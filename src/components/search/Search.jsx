@@ -8,7 +8,7 @@ function Search({ setUser, setErrText, isLoading, setIsLoading }) {
   useEffect(() => {
     setIsLoading(true)
     const fetchData = async () => {
-      const response = await fetch(`http://127.0.0.1:1234/proxy/bios/${searchText}`)
+      const response = await fetch(`/proxy/bios/${searchText}`)
       const data = await response.json()
       if (response.status === 200) {
         setUser(data)
