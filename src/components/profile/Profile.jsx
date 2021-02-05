@@ -5,9 +5,13 @@ import Social from "../social/Social"
 
 function Profile({ person }) {
   return (
-    <div className="profile col-sm-12 p-2">
+    <div className="profile card col-sm-12">
       <div className="row">
-        <img className="profile__pic col-sm-12 m-auto" src={person.pictureThumbnail} alt="profile_picture" />
+        {
+          person.pictureThumbnail ?
+          <img className="profile__pic col-sm-12 m-auto" src={person.pictureThumbnail} alt="profile_picture" /> :
+          <i className="bi bi-person-circle text-center"></i>
+        }
         <div className="profile__details col-sm-12 text-white">
           <h1>{person.name}</h1>
           <span>{person.publicId}</span>

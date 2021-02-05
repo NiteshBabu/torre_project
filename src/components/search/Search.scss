@@ -8,6 +8,8 @@
   border : 2px solid #fff;
   border-radius: 10px;
   transition: 500ms ease-in-out;
+  position: relative;
+  z-index: 2;
   
     &:focus-within{
         border : 2px solid wheat;
