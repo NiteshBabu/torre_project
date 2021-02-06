@@ -5,10 +5,14 @@ import Search from "./components/search/Search";
 import Profile from "./components/profile/Profile";
 import Header from "./components/header/Header";
 import Caraousel from "./components/carousel/Caraousel";
-import Strengths from "./components/strengths/Strengths";
-import Interests from "./components/interests/Interest";
+import Badges from "./components/badges/Badges";
 import ErrorContainer from "./components/ErrorContainer";
-import LoadingIcon from "./components/loading.gif";
+import SideInfo from "./components/side-info/SideInfo";
+import LoadingIcon from "./components/loading/LodingIcon";
+import Footer from "./components/footer/Footer";
+import Card from "./components/Card";
+import Jobs from "./components/jobs/Jobs";
+import Languages from "./components/languages/Languages";
 
 function Container() {
 	const [user, setUser] = useState(null);
@@ -16,40 +20,50 @@ function Container() {
 	const [errText, setErrText] = useState(null);
 
 	return (
-		<div>
+		<>
 			<Header />
-			<div className='container col-sm-12 col-md-6'>
+			<div className='row container'>
 				<Search
 					setUser={setUser}
 					setErrText={setErrText}
-					isLoading={isLoading}
 					setIsLoading={setIsLoading}
 				/>
 				{errText && <ErrorContainer errText={errText} />}
 				{isLoading ? (
-					<div className='d-flex loading-wrapper'>
-						<img className='loading-icon m-auto' src={LoadingIcon} />
-					</div>
+					<LoadingIcon />
 				) : (
 					user && (
 						<>
-							<div
-								className='col-sm-12 backdrop d-sm-none d-lg-flex'
-								style={{
-									backgroundImage: user && `url(${user.person.picture})`,
-								}}>
-								<h4>{user.person.name}</h4>
-							</div>
+							<SideInfo person={user.person} />
 							<Caraousel>
-								<Profile {...user} />
-								<Strengths strengths={user.strengths} />
-								<Interests interests={user.interests} />
+								<Card>
+									<Profile {...user} />
+								</Card>
+									<Card>
+										<Badges
+											title='Strengths'
+											bgColor='bg-secondary'
+											type={user.strengths}
+										/>
+										<Badges
+											title='Interests'
+											bgColor='bg-dark'
+											type={user.interests}
+										/>
+									</Card>
+									<Card>
+										<Jobs jobs={user.jobs} />
+									</Card>
+									<Card>
+										<Languages languages={user.languages} />
+									</Card>
 							</Caraousel>
 						</>
 					)
 				)}
 			</div>
-		</div>
+			<Footer />
+		</>
 	);
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./Search.scss"
 
-function Search({ setUser, setErrText, isLoading, setIsLoading }) {
+function Search({ setUser, setErrText, setIsLoading }) {
 
   const [searchText, setSearchText] = useState("Niteshbabusharma")
 
@@ -33,7 +33,7 @@ function Search({ setUser, setErrText, isLoading, setIsLoading }) {
         </svg>
         <input type="search" placeholder="niteshbabusharma" onChange={e => setSearchText(e.target.value)} />
       </div>
-      <small className="text-white">Search By Username</small>
+      <small className="text-white fw-bold">Search By Username</small>
     </div>
   )
 }

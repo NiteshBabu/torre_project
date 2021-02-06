@@ -1,0 +1,20 @@
+.sideinfo {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  .profile-pic{
+    width : 90%;
+    img{
+      border-radius: 80%;
+      width : 100%;
+      margin-left: 10px;
+    }
+  }
+  
+  i{
+    font-size: 100px;
+  }
+}

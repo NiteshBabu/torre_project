@@ -1,11 +1,24 @@
-.carousel-inner{
-  .item{
-    margin-left: 85px;
-  }
-}
+.carousel {
+	margin-right: -80px ;
 
-.carousel-control-prev,
-.carousel-control-next{
-  height : 10px ;
-  margin: auto;
+	.carousel-inner {
+		.item {
+			margin-left: 85px;
+		}
+	}
+	
+	.carousel-control-prev,
+	.carousel-control-next {
+		height: 10px;
+		margin: auto;
+	}
+	
+	@media only screen and (max-width : 768px){
+		margin-right: 0px ;
+		.carousel-inner {
+			.item {
+				margin-left: 35px;
+			}
+		}
+	}
 }

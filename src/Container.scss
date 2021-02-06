@@ -1,51 +1,51 @@
-.backdrop {
-	position: absolute;
-	left: 1%;
-	top : 15%;
-	height : 350px;
-	width : 300px;
-	border-radius: 1%;
-	background-repeat: no-repeat;
-	background-size: contain;
-	z-index: -1;
-	display: flex;
-	justify-content: center;
-	align-items:flex-end;
-	color: white;
-}
+$background-color: #6d551894;
 
 .container {
 	margin: 10px auto;
 	height: 85vh;
 	border-radius: 2%;
-	background-color: #4f3535;
-	
-	h1,h2,h3,h4,h5 {
+	background: $background-color;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
 		color: wheat;
 	}
 
-	.loading-wrapper{
+	.loading-wrapper {
 		height: 400px;
-
-		.loading-icon{
+		.loading-icon {
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
 		}
 	}
-	
+
 	.card {
 		height: 430px;
 		max-width: 85%;
 		overflow-y: auto;
 		margin: 10px;
-		padding: 20px;
-		border-radius: 30px;
-		background: #4f3535;
-		box-shadow: 8px 8px 13px #392626, -8px -8px 13px #654444;
+		padding: 22px;
 		scrollbar-width: none;
+
+		border-radius: 34px;
+		background: $background-color;
+		box-shadow: 10px 10px 31px #24221d, -10px -10px 31px $background-color;
+
 		&::-webkit-scrollbar {
 			display: none;
 		}
 	}
+}
+
+#heart {
+	color: crimson;
+	font-size: 20px;
+}
+
+.capitalize{
+	text-transform: capitalize;
 }
